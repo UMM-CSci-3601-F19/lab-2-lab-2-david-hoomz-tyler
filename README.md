@@ -1,7 +1,5 @@
 # CSCI 3601 Lab #2 - JavaScript and Spark Lab
 
-Our repo page: https://github.com/UMM-CSci-3601-F19/lab-2-lab-2-david-hoomz-tyler.git
-
 [![Build Status](https://travis-ci.org/UMM-CSci-3601-F19/lab-2-lab-2-david-hoomz-tyler.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601-F19/lab-2-lab-2-david-hoomz-tyler)
 
 Here you will explore serving up a simple website that you create, 
