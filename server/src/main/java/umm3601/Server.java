@@ -14,7 +14,9 @@ public class Server {
 
   public static final String CLIENT_DIRECTORY = "../client";
   public static final String USER_DATA_FILE = "src/main/data/users.json";
+  public static final String TODO_DATA_FILE = "src/main/data/todos.json";
   private static Database userDatabase;
+  private static Database todoDatabase;
 
   public static void main(String[] args) {
 
@@ -33,7 +35,8 @@ public class Server {
 
     // Redirects to create simpler URLs
     redirect.get("/about", "/about.html");
-    redirect.get("/users", "/users.html");
+    redirect.get("/users", "/.html");
+    redirect.get("/todo", "/todo.html");
 
     // API endpoints
 
@@ -83,6 +86,9 @@ public class Server {
 
     return userController;
   }
+
+  /*TD database begins here*/
+
 
   // Enable GZIP for all responses
   private static Filter addGzipHeader = (Request request, Response response) -> {
