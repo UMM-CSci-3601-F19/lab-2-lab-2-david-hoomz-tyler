@@ -8,25 +8,38 @@
    <script type="text/javascript" src="javascript/todo.js"></script>
 </head>
 <body>
-<button type="button" id="getAll">Get All Users</button>
-
-<hr/>
 
 <div id="jsonDump" style="margin-top:20px"> Json will go here</div>
 
-<label for="age">age:</label><input id="age" type="text" name="age">
-<button type="button" id="getUsersByAge"> get users by age</button>
+<hr/>
+<label for="owner">Owner:</label><input id="owner" type="text" name="owner">
+<hr/>
 
 <script>
     window.onload = function () {
         console.log("The page is loaded now!");
 
-        var element = document.getElementById('getAll');
-        element.addEventListener("click", getAllUsers, true);
+        var element = document.getElementById('getAllUsersByOwner');
+        element.addEventListener("click", getAllUsersByOwner, true);
 
-        element = document.getElementById('getUsersByAge');
-        element.addEventListener("click", getAllUsersByAge, true);
+
     }
+
 </script>
+
+<div id="category" style="margin-top:20px"> Sort by Category</div>
+
+<form>
+  <input type="checkbox" name="category" value="video games" unchecked> videogames<br>
+  <input type="checkbox" name="category" value="homework" unchecked> homework<br>
+  <input type="checkbox" name="category" value="groceries" unchecked> groceries<br>
+  <input type="checkbox" name="category" value="software design" unchecked> software design<br>
+</form>
+
+<hr/>
+
+<button type="button" id="getOwner">Search by Owner</button>
+<button type="button" id="getCategory">Search by Category</button>
+
 </body>
 </html>

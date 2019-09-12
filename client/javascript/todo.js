@@ -1,18 +1,26 @@
 /**
- * Function to get all the users!
+ * Function to get all the users (but this time from todo)!
  */
 function getAllUsers() {
-  console.log("Getting all the users from todo.");
+  console.log("Getting all the users.");
 
   get("/api/todo", function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
 
-function getAllUsersByAge() {
+function getAllUsersByOwner() {
   console.log("Getting all the users.");
 
-  get("/api/todo?age=" + document.getElementById("age").value, function (returned_json) {
+  get("/api/todo?owner=" + document.getElementById("owner").value, function (returned_json) {
+    document.getElementById('jsonDump').innerHTML = returned_json;
+  });
+}
+
+function getAllUsersByCategory() {
+  console.log("Getting all the users.");
+
+  get("/api/todo?category=" + document.getElementById("category").value, function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
