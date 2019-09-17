@@ -8,6 +8,7 @@
    <script type="text/javascript" src="javascript/todo.js"></script>
 </head>
 <body>
+<button type="button" id="getAllUsers">Get all Users</button>
 
 <div id="jsonDump" style="margin-top:20px"> Json will go here</div>
 
@@ -22,6 +23,8 @@
         var element = document.getElementById('getAllUsersByOwner');
         element.addEventListener("click", getAllUsersByOwner, true);
 
+        var element = document.getElementById('getAllUsersByBody');
+        element.addEventListener("click", getAllUsersByBody, true);
 
     }
 
@@ -34,12 +37,17 @@
   <input type="checkbox" name="category" value="homework" unchecked> homework<br>
   <input type="checkbox" name="category" value="groceries" unchecked> groceries<br>
   <input type="checkbox" name="category" value="software design" unchecked> software design<br>
+
+  <input type="radio" name="status" value="true" unchecked> true<br>
+  <input type="radio" name="status" value="false" unchecked> false<br>
 </form>
 
 <hr/>
 
 <button type="button" id="getOwner">Search by Owner</button>
 <button type="button" id="getCategory">Search by Category</button>
+<button type="button" id="getStatus">Search by Status</button>
+
 
 </body>
 </html>
