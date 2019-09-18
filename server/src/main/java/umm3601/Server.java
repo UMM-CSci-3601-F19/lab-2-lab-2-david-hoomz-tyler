@@ -3,6 +3,8 @@ package umm3601;
 import spark.Filter;
 import spark.Request;
 import spark.Response;
+import umm3601.todo.TDatabase;
+import umm3601.todo.TodoController;
 import umm3601.user.Database;
 import umm3601.user.UserController;
 
@@ -16,7 +18,7 @@ public class Server {
   public static final String USER_DATA_FILE = "src/main/data/users.json";
   public static final String TODO_DATA_FILE = "src/main/data/todos.json";
   private static Database userDatabase;
-  private static Database todoDatabase;
+  private static TDatabase todoDatabase;
 
   public static void main(String[] args) {
 
@@ -88,7 +90,24 @@ public class Server {
   }
 
   /*TD database begins here*/
+  private static TodoController buildTodoController(){
+    TodoController todoController = null;
 
+    try{
+      todoDatabase = new TDatabase(TODO_DATA_FILE);
+      todoController = new TodoController(todoDatabase);
+
+    } catch (IOException e){
+      System.err.println("Server failed to load todo data; shutting down.");
+      e.printStackTrace(System.err);
+
+      stop();
+      System.exit(1);
+    }
+
+    return todoController;
+
+  }
 
   // Enable GZIP for all responses
   private static Filter addGzipHeader = (Request request, Response response) -> {
