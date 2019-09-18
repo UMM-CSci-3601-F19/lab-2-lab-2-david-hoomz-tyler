@@ -1,7 +1,7 @@
 /**
  * Function to get all the users (but this time from todo)!
  */
-function getAllUsers() {
+function getAllTodos() {
   console.log("Getting all the users.");
 
   get("/api/todo", function (returned_json) {
@@ -9,7 +9,7 @@ function getAllUsers() {
   });
 }
 
-function getAllUsersByOwner() {
+function getAllTodosByOwner() {
   console.log("Getting all the users.");
 
   get("/api/todo?owner=" + document.getElementById("owner").value, function (returned_json) {
@@ -17,7 +17,7 @@ function getAllUsersByOwner() {
   });
 }
 
-function getAllUsersByCategory() {
+function getAllTodosByCategory() {
   console.log("Getting all the users.");
 
   get("/api/todo?category=" + document.getElementById("category").value, function (returned_json) {
