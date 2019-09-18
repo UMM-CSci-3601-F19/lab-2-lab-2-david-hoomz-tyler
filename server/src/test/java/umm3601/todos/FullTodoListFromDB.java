@@ -16,7 +16,6 @@ public class FullTodoListFromDB {
   public void totalTodoCount() throws IOException{
     TDatabase db = new TDatabase("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
-    System.out.println(allTodos.length);
     assertEquals("Incorrect total number of todos", 300, allTodos.length);
   }
 }
