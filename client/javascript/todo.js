@@ -2,7 +2,7 @@
  * Function to get all the users (but this time from todo)!
  */
 function getAllTodos() {
-  console.log("Getting all the users.");
+  console.log("Getting all the todos.");
 
   get("/api/todo", function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
