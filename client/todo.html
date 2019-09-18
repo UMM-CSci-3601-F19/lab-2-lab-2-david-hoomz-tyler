@@ -10,6 +10,7 @@
 <body>
 <button type="button" id="getAllUsers">Get all Users</button>
 
+
 <div id="jsonDump" style="margin-top:20px"> Json will go here</div>
 
 <hr/>
@@ -23,9 +24,11 @@
         var element = document.getElementById('getAllUsersByOwner');
         element.addEventListener("click", getAllUsersByOwner, true);
 
-        var element = document.getElementById('getAllUsersByBody');
-        element.addEventListener("click", getAllUsersByBody, true);
+        var element = document.getElementById('getAllUsersByCategory');
+        element.addEventListener("click", getAllUsersByCategory, true);
 
+        var element = document.getElementById('getAllUsers');
+        element.addEventListener("click", getAllUsers, true);
     }
 
 </script>
@@ -38,11 +41,16 @@
   <input type="checkbox" name="category" value="groceries" unchecked> groceries<br>
   <input type="checkbox" name="category" value="software design" unchecked> software design<br>
 
+  <hr/>
+  <div id="status" style="margin-top:20px"> Sort by Status</div>
+
   <input type="radio" name="status" value="true" unchecked> true<br>
   <input type="radio" name="status" value="false" unchecked> false<br>
+
 </form>
 
 <hr/>
+
 
 <button type="button" id="getOwner">Search by Owner</button>
 <button type="button" id="getCategory">Search by Category</button>
