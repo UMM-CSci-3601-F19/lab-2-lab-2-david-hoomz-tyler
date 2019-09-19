@@ -4,7 +4,7 @@
 function getAllUsers() {
   console.log("Getting all the users.");
 
-  get("/api/user", function (returned_json) {
+  get("/api/users", function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }

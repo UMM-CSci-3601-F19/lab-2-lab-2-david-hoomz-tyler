@@ -8,7 +8,7 @@
    <script type="text/javascript" src="javascript/todo.js"></script>
 </head>
 <body>
-<button type="button" id="getAllTodos">Get all Users</button>
+<button type="button" id="getAllTodos">Get all Todos</button>
 
 
 <div id="jsonDump" style="margin-top:20px"> Json will go here</div>
@@ -22,13 +22,13 @@
         console.log("The page is loaded now!");
 
         var element = document.getElementById('getAllTodosByOwner');
-        element.addEventListener("click", getAllUsersByOwner, true);
+        element.addEventListener("click", getAllTodosByOwner, true);
 
         var element = document.getElementById('getAllTodosByCategory');
-        element.addEventListener("click", getAllUsersByCategory, true);
+        element.addEventListener("click", getAllTodosByCategory, true);
 
-        var element = document.getElementById('getAllUsers');
-        element.addEventListener("click", getAllUsers, true);
+        var element = document.getElementById('getAllTodos');
+        element.addEventListener("click", getAllTodos, true);
     }
 
 </script>
