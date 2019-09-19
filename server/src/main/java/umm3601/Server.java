@@ -24,6 +24,7 @@ public class Server {
 
     // Initialize dependencies
     UserController userController = buildUserController();
+    TodoController todoController = buildTodoController();
 
     // Configure Spark
     port(4567);
@@ -46,6 +47,11 @@ public class Server {
     get("api/users/:id", userController::getUser);
     // List users, filtered using query parameters
     get("api/users", userController::getUsers);
+
+    //Get specific todos
+    get("api/todos/:id", todoController::getTodo );
+    //List todos, filtered using query params
+    get("api/todos", todoController::getTodos);
 
     // An example of throwing an unhandled exception so you can see how the
     // Java Spark debugger displays errors like this.
